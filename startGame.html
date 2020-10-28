@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script>
+            //shares the user input across the javascript and html files and takes the user to board.html after on-click
+            function interactJS(){
+                var b = document.getElementById("level").value; 
+                url = "board.html?level=" + encodeURIComponent(b); 
+                document.location.href = url;
+            }
+        </script>
+    </head>
+    <body><h1>WELCOME TO OUR GAME!</h1>
+
+        <h3>
+        Rules:<br>
+        <ol>
+            <li>The game consists of an 8X8 board of Halloween themed emoticons. Your mission is to identify and click on the the emoticons on the board that are in groups of four or more.</li>
+            <li>Every single time you click, the group of 4 or more will disappear and the rest of the emoticons will drop down to occupy the empty space. </li>
+            <li>Once there are no more groups of four or more left, if you have any moves left, the board will automatically randomly refill. </li>
+            <li>If you do have moves left when the board refills, you will be awarded bonus points. </li>
+            <li>You will be allowed a fixed number of moves based on the level that you choose.</li>
+            <li>Enter the level that you wish to play and then click on the ‘Play’ button. Your level will determine how many moves (or clicks) you will be allowed before the game ends.
+                <ul>
+                    <li>For easy, moves = 50
+                    <li>For medium, moves = 35
+                    <li>For hard, moves = 20
+                </ul>
+            </li>
+            <li>Every single time you identify a group correctly, your score will be recorded and displayed based on the size of the group you were able to identify and the level of the game.</li>
+            <li>As soon as you exhaust your moves, the game will end and your score will be displayed. </li>
+            <li>Don't forget to turn on the sounds on your device for the full experience!!</li>
+        </ol>
+       
+        <label for="level">What level do you wish to play? (easy, medium or hard)</label><br></h3>
+        <select id="level" name="options">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+        
+        <button class="play" type="button" id="moves" onclick="interactJS()">Play</button><br>
+               
+    </body>
+</html>
+
